@@ -34,6 +34,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y clang-tidy
+          rm -rf build/*
           mkdir -p build
           cd build
           cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
@@ -59,6 +60,7 @@ jobs:
       # Step 3: Configure and build with CMake
       - name: Build Project
         run: |
+          rm -rf build/*
           mkdir -p build
           cd build
           cmake ..
