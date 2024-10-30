@@ -19,6 +19,11 @@ jobs:
       # Step 1: Check out the code
       - name: Check out code
         uses: actions/checkout@v4
+        with:
+          submodules: true
+          
+      - name: Update Submodules
+        run: git submodule update --init --recursive
 
       # Step 2: Branch protection checks
       - name: Branch Protection Checks
@@ -50,6 +55,11 @@ jobs:
       # Step 1: Check out the code
       - name: Check out code
         uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Update Submodules
+        run: git submodule update --init --recursive
 
       # Step 2: Install dependencies
       - name: Install Dependencies
